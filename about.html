@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Us | Expo Nails</title>
+  <link rel="icon" href="logooo.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header -->
+  <div class="header">
+    <div id="headerInner" class="header-inner">
+      <a href="website.html" class="logo-title">
+        <h1 class="title">
+          <img src="logooo.png" alt="Expo Nails Logo" class="logo" />
+          <b>EXPO Nails & Beauty</b>
+        </h1>
+      </a>
+    
+      <button class="hamburger" aria-label="Toggle Navigation Menu" onclick="toggleMenu()">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>     
+    
+      <nav class="navbar" id="navbar">
+        <a href="website.html"><i class="fas fa-home"></i> Home</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="website.html#contact">Contact</a>
+        <a href="about.html">About Us</a>
+      </nav>
+    </div>      
+  </div>    
+
+  <!-- About Us Section -->
+  <div class="about-container">
+    <h2>About Expo Nails and Beauty</h2>
+    <p>Expo Nails has proudly served the Clinton, Mississippi community with quality nail and beauty services for 20+ years.</p>
+    
+    <p>Our mission is simple: to provide a place of comfort, relaxation, and top tier service. We combine modern techniques with premium products to ensure you get the look and feel you deserve. From classic manicures and spa pedicures to custom nail art and lash enhancements, every treatment is performed with care and precision.</p>
+
+    <p>We are more than just a nail salon. We are a family. Our talented team is made up of professional technicians who are passionate about beauty and dedicated to maintaining the highest hygiene standards. Your health and happiness are always our top priorities.</p>
+
+    <p>We welcome walk-ins and love making each visit a personalized and memorable experience. Whether it’s a regular self-care ritual or a special treat, we’re here to make you feel pampered every time.</p>
+
+    <p> <strong>Come see us at Expo Nails and Beauty — Where beauty begins at your fingertips.</strong></p>
+  </div>
+
+  <!-- Back Button -->
+  <div class="center-button" style="margin-bottom: 60px;">
+    <a href="website.html" class="btn">
+      <i class="fas fa-arrow-left"></i> Back to Home
+    </a>
+  </div>
+
+  <!-- Footer (copied from website.html) -->
+  <div class="social-links">
+    <a href="https://www.instagram.com/exponailsnbeauty/" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="icon"> Instagram
+    </a>
+    <a href="https://www.facebook.com/ExpoNailsAndBeautyClinton/" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" class="icon"> Facebook
+    </a>
+  </div>
+
+  <footer>
+    <p><i class="fas fa-map-marker-alt"></i> 212-B Clinton Blvd, Clinton, MS 39056</p>
+    <p><i class="fas fa-phone-alt"></i> <a href="tel:6019241413" class="phone-link">(601) 924-1413</a></p>
+    <p><i class="fas fa-envelope"></i> exponails2019@gmail.com</p>
+    <p><i class="fas fa-clock"></i> Open Hours: Mon–Sat, 9:00 AM – 7:00 PM</p>
+    <p><i class="fas fa-calendar-check"></i> <strong>Walk-ins Welcome – No Appointment Needed</strong></p>
+  </footer>
+
+  <div>
+    <br><br>
+    <p class="endings">Expo Nails & Beauty © All Rights Reserved - 2025 - Designed by Hoan Tran <br><br>
+      <a href="website.html">Expo Nails & Beauty</a> <b>|</b>
+      <a href="website.html">Nails salon in Clinton, MS 39056</a> <b>|</b>
+      <a href="https://www.facebook.com/ExpoNailsAndBeautyClinton/">Blog</a>
+    </p>
+    <br>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      if (window.innerWidth > 768) return; // don't toggle on desktop
+
+      const navbar = document.getElementById("navbar");
+      const headerInner = document.getElementById("headerInner");
+
+      navbar.classList.toggle("show");
+      headerInner.classList.toggle("expanded");
+      headerInner.classList.toggle("collapsed");
+
+      setTimeout(() => {
+        const headerHeight = document.querySelector('.header').offsetHeight;
+        document.body.style.setProperty('--header-height', `${headerHeight}px`);
+      }, 300);
+    }
+  
+    // Collapse on load
+    window.addEventListener("load", () => {
+      const headerInner = document.getElementById("headerInner");
+      headerInner.classList.add("collapsed");
+      const headerHeight = document.querySelector('.header').offsetHeight;
+      document.body.style.setProperty('--header-height', `${headerHeight}px`);
+    });
+  </script>    
+
+  <script>
+    // Show the button when scrolling down
+    window.onscroll = function () {
+      const scrollBtn = document.getElementById("scrollBtn");
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        scrollBtn.style.display = "block";
+      } else {
+        scrollBtn.style.display = "none";
+      }
+    };
+
+    // Scroll to top smoothly
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+
+  <a href="tel:6019241413" class="call-icon" title="Call Us">
+    <i class="fas fa-phone-alt"></i>
+  </a>
+
+  <script>
+    function toggleMenu() {
+      if (window.innerWidth > 768) return; // don't toggle on desktop
+
+      const navbar = document.getElementById("navbar");
+      const headerInner = document.getElementById("headerInner");
+
+      navbar.classList.toggle("show");
+      headerInner.classList.toggle("expanded");
+      headerInner.classList.toggle("collapsed");
+
+      setTimeout(() => {
+        const headerHeight = document.querySelector('.header').offsetHeight;
+        document.body.style.setProperty('--header-height', `${headerHeight}px`);
+      }, 300);
+    }
+  
+    // Collapse on load
+    window.addEventListener("load", () => {
+      const headerInner = document.getElementById("headerInner");
+      headerInner.classList.add("collapsed");
+      const headerHeight = document.querySelector('.header').offsetHeight;
+      document.body.style.setProperty('--header-height', `${headerHeight}px`);
+    });
+  </script>    
+  
+  <script>
+    function toggleMenu() {
+      const navbar = document.getElementById("navbar");
+      const headerInner = document.getElementById("headerInner");
+      const hamburger = document.querySelector(".hamburger");
+  
+      navbar.classList.toggle("show");
+      headerInner.classList.toggle("expanded");
+      headerInner.classList.toggle("collapsed");
+      hamburger.classList.toggle("active");
+    }
+  
+    window.onload = () => {
+      const headerInner = document.getElementById("headerInner");
+      headerInner.classList.add("collapsed");
+    };
+  </script>
+  
+  <script>
+    // Clear mobile menu state on desktop resize
+    window.addEventListener('resize', () => {
+      const navbar = document.getElementById('navbar');
+      const headerInner = document.getElementById('headerInner');
+      const hamburger = document.querySelector('.hamburger');
+  
+      if (window.innerWidth >= 769) {
+        navbar.classList.remove('show');
+        headerInner.classList.remove('expanded');
+        headerInner.classList.add('collapsed');
+        hamburger.classList.remove('active');
+      }
+    });
+  </script>
+
+</body>
+</html>

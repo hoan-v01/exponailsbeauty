@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Our Services | Expo Nails</title>
+  <link rel="icon" href="logooo.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+/* Service Section Styling */
+.services-section {
+  background-color: white;
+  padding: 0px 0px 100px;
+  text-align: center;
+}
+
+.services-heading {
+  font-family: "Lucida", serif;
+  font-size: 32px;
+  color: black;
+  margin-bottom: 40px;
+  display: inline-block;
+  padding-bottom: 8px;
+  border: none;
+}
+
+.services-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.services-container {
+  flex: 1 1 60%;
+}
+
+.service-group {
+  background-color: #fefefe;
+  padding: 25px;
+  margin-bottom: 30px;
+  border-left: 5px solid goldenrod;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  border-radius: 8px;
+}
+
+.service-group h3 {
+  font-size: 22px;
+  color: goldenrod;
+  margin-bottom: 12px;
+  border-bottom: 1px dashed #ccc;
+  padding-bottom: 5px;
+  font-family: "Lucida", serif;
+}
+
+.service-group p {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.6;
+  margin: 6px 0;
+}
+
+.service-group strong {
+  color: #000;
+}
+
+.services-image {
+  flex: 1 1 35%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.services-image img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .services-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .services-container, .services-image {
+    width: 100%;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <div class="header">
+    <div id="headerInner" class="header-inner collapsed">
+      <a href="website.html" class="logo-title">
+        <h1 class="title">
+          <img src="logooo.png" alt="Expo Nails Logo" class="logo" />
+          <b>EXPO Nails & Beauty</b>
+        </h1>
+      </a>
+      <button class="hamburger" aria-label="Toggle Navigation Menu" onclick="toggleMenu()">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>     
+      <nav class="navbar" id="navbar">
+        <a href="website.html"><i class="fas fa-home"></i> Home</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="website.html#contact">Contact</a>
+        <a href="about.html">About Us</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Services Section -->
+  <div class="services-section">
+    <h2 class="services-heading"></h2>
+
+    <!-- Full Menu Image Preview -->
+    <div class="menu-image-preview" style="text-align:center; margin-bottom: 40px;">
+        <img src="Spa.png" alt="Full Spa Menu" style="max-width: 100%; border-radius: 10px; box-shadow: 0 8px 20px rgba(0,0,0,0.1);">
+    </div>    
+
+  </div>
+
+  <!-- Footer (copied from website.html) -->
+  <div class="social-links">
+    <a href="https://www.instagram.com/exponailsnbeauty/" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="icon"> Instagram
+    </a>
+    <a href="https://www.facebook.com/ExpoNailsAndBeautyClinton/" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" class="icon"> Facebook
+    </a>
+  </div>
+
+  <footer>
+    <p><i class="fas fa-map-marker-alt"></i> 212-B Clinton Blvd, Clinton, MS 39056</p>
+    <p><i class="fas fa-phone-alt"></i> <a href="tel:6019241413" class="phone-link">(601) 924-1413</a></p>
+    <p><i class="fas fa-envelope"></i> exponails2019@gmail.com</p>
+    <p><i class="fas fa-clock"></i> Open Hours: Mon–Sat, 9:00 AM – 7:00 PM</p>
+    <p><i class="fas fa-calendar-check"></i> <strong>Walk-ins Welcome – No Appointment Needed</strong></p>
+  </footer>
+
+  <div>
+    <br><br>
+    <p class="endings">Expo Nails & Beauty © All Rights Reserved - 2025 - Designed by Hoan Tran <br><br>
+      <a href="website.html">Expo Nails & Beauty</a> <b>|</b>
+      <a href="website.html">Nails salon in Clinton, MS 39056</a> <b>|</b>
+      <a href="https://www.facebook.com/ExpoNailsAndBeautyClinton/">Blog</a>
+    </p>
+    <br>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const navbar = document.getElementById("navbar");
+      const headerInner = document.getElementById("headerInner");
+      navbar.classList.toggle("show");
+      headerInner.classList.toggle("expanded");
+      headerInner.classList.toggle("collapsed");
+    }
+
+    window.onload = () => {
+      const headerInner = document.getElementById("headerInner");
+      headerInner.classList.add("collapsed");
+    };
+  </script>
+
+  <button onclick="scrollToTop()" id="scrollBtn" title="Go to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>    
+
+  <script>
+    // Show the button when scrolling down
+    window.onscroll = function () {
+      const scrollBtn = document.getElementById("scrollBtn");
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        scrollBtn.style.display = "block";
+      } else {
+        scrollBtn.style.display = "none";
+      }
+    };
+
+    // Scroll to top smoothly
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+
+  <a href="tel:6019241413" class="call-icon" title="Call Us">
+    <i class="fas fa-phone-alt"></i>
+  </a>
+
+  <script>
+    function toggleMenu() {
+      if (window.innerWidth > 768) return; // don't toggle on desktop
+
+      const navbar = document.getElementById("navbar");
+      const headerInner = document.getElementById("headerInner");
+
+      navbar.classList.toggle("show");
+      headerInner.classList.toggle("expanded");
+      headerInner.classList.toggle("collapsed");
+
+      setTimeout(() => {
+        const headerHeight = document.querySelector('.header').offsetHeight;
+        document.body.style.setProperty('--header-height', `${headerHeight}px`);
+      }, 300);
+    }
+  
+    // Collapse on load
+    window.addEventListener("load", () => {
+      const headerInner = document.getElementById("headerInner");
+      headerInner.classList.add("collapsed");
+      const headerHeight = document.querySelector('.header').offsetHeight;
+      document.body.style.setProperty('--header-height', `${headerHeight}px`);
+    });
+  </script>    
+  
+  <script>
+    function toggleMenu() {
+      const navbar = document.getElementById("navbar");
+      const headerInner = document.getElementById("headerInner");
+      const hamburger = document.querySelector(".hamburger");
+  
+      navbar.classList.toggle("show");
+      headerInner.classList.toggle("expanded");
+      headerInner.classList.toggle("collapsed");
+      hamburger.classList.toggle("active");
+    }
+  
+    window.onload = () => {
+      const headerInner = document.getElementById("headerInner");
+      headerInner.classList.add("collapsed");
+    };
+  </script>
+  
+  <script>
+    // Clear mobile menu state on desktop resize
+    window.addEventListener('resize', () => {
+      const navbar = document.getElementById('navbar');
+      const headerInner = document.getElementById('headerInner');
+      const hamburger = document.querySelector('.hamburger');
+  
+      if (window.innerWidth >= 769) {
+        navbar.classList.remove('show');
+        headerInner.classList.remove('expanded');
+        headerInner.classList.add('collapsed');
+        hamburger.classList.remove('active');
+      }
+    });
+  </script>
+
+</body>
+</html>

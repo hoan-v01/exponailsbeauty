@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Expo Nails & Beauty</title>
+  <link rel="icon" href="logooo.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Fixed Header -->
+    <div class="header">
+      <div id="headerInner" class="header-inner">
+        <a href="website.html" class="logo-title">
+          <h1 class="title">
+            <img src="logooo.png" alt="Expo Nails Logo" class="logo" />
+            <b>EXPO Nails & Beauty</b> 
+          </h1>
+        </a>
+      
+        <button class="hamburger" aria-label="Toggle Navigation Menu" onclick="toggleMenu()">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>        
+      
+        <nav class="navbar" id="navbar">
+          <a href="website.html"><i class="fas fa-home"></i> Home</a>
+          <a href="services.html">Services</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="website.html#contact">Contact</a>
+          <a href="about.html">About Us</a>
+        </nav>
+      </div>      
+    </div>    
+
+    <main class="page">
+      <!-- Fade Carousel -->
+      <div class="fade-carousel fade-in-on-scroll">
+        <div class="slides-wrapper" id="slidesWrapper">
+          <img src="background01.jpg" class="fade-slide">
+          <img src="background02.jpg" class="fade-slide">
+          <img src="background03.jpg" class="fade-slide">
+          <img src="background04.jpg" class="fade-slide">
+          <img src="background05.jpg" class="fade-slide">
+        </div>
+
+        <button class="prev" type="button" aria-label="Previous slide">&#10094;</button>
+        <button class="next" type="button" aria-label="Next slide">&#10095;</button>
+        <!-- Carousel Dots -->
+        <div class="carousel-dots" id="carousel-dots"></div>
+      </div>     
+
+      <!-- Bio Section -->
+      <div>
+        <h3 class="bio">
+          <span class="cursive">Welcome to</span><br>
+
+          <!-- Split the main line so we can measure the width before the 'A' -->
+          <span class="bio-main">
+            <span id="bio-preA">EXPO NAILS </span>and BEAUTY
+          </span><br>
+
+          <!-- Sub-line we will offset -->
+          <span class="bio-sub">— Where Beauty Begins at Your Fingertips</span>
+        </h3>
+        <p class="bio">
+          At Expo Nails, we believe that your nails are a reflection of your unique style and personality.
+          Our mission is to provide top tier nail care in a clean, relaxing, and welcoming environment.
+          Whether you are here for a classic manicure, a stunning gel set, or creative nail art,
+          our talented technicians are dedicated to bringing your vision to life.
+          With high quality products, a passion for detail, and a commitment to customer satisfaction,
+          Expo Nails is your go to destination for elegance and self care.
+          Walk in with confidence, walk out with perfection.
+        </p>
+      </div>
+
+      <!-- Add the "About Us" link below -->
+      <div class="center-button">
+        <a href="about.html" class="btn">
+          <i class="fas fa-info-circle"></i> Learn More About Us
+        </a>
+      </div>      
+    
+      <!-- Services Section -->
+      <div id="services" class="services-section">
+        <h2 class="services-heading"></h2>
+        <!-- Wrapper for services and image -->
+        <div class="services-wrapper">
+          <div class="services-container">
+            <div class="accordion">
+              <!-- Acrylic Nail -->
+              <div class="accordion-item">
+                <button class="accordion-header">Acrylic Nail <span class="arrow">&#9662;</span></button>
+                <div class="accordion-body">
+                  <p>Full Set ________________________________ <strong>$35.00+</strong></p>
+                  <p>Full Set Gel ____________________________ <strong>$40.00+</strong></p>
+                  <p>Fill In _________________________________ <strong>$25.00+</strong></p>
+                  <p>Fill In Gel ______________________________ <strong>$35.00+</strong></p>
+                </div>
+              </div>
+        
+              <!-- Powder Gel -->
+              <div class="accordion-item">
+                <button class="accordion-header">Powder Gel <span class="arrow">&#9662;</span></button>
+                <div class="accordion-body">
+                  <p>Full Set ________________________________ <strong>$45.00+</strong></p>
+                  <p>Fill In _________________________________ <strong>$35.00+</strong></p>
+                  <p>Powder Overlay _________________________ <strong>$45.00+</strong></p>
+                </div>
+              </div>
+        
+              <!-- Powder Ombre -->
+              <div class="accordion-item">
+                <button class="accordion-header">Powder Ombre <span class="arrow">&#9662;</span></button>
+                <div class="accordion-body">
+                  <p>Full Set ________________________________ <strong>$50.00+</strong></p>
+                  <p>Fill In (2 Color) __________________________ <strong>$45.00+</strong></p>
+                  <p>Fill In (1 Color) __________________________ <strong>$30.00+</strong></p>
+                </div>
+              </div>
+        
+              <!-- Natural Nail Manicure -->
+              <div class="accordion-item">
+                <button class="accordion-header">Natural Nail Manicure <span class="arrow">&#9662;</span></button>
+                <div class="accordion-body">
+                  <p>Manicure (Regular Polish) _________________ <strong>$25.00+</strong></p>
+                  <p>Gel Polish Manicure ______________________ <strong>$35.00+</strong></p>
+                  <p>Gel Polish Change _______________________ <strong>$25.00+</strong></p>
+                </div>
+              </div>
+
+              <!-- Pink & White -->
+              <div class="accordion-item">
+                <button class="accordion-header">Pink and White <span class="arrow">&#9662;</span></button>
+                <div class="accordion-body">
+                  <p>Full Set ________________________________ <strong>$50.00+</strong></p>
+                  <p>Fill In (2 Color) __________________________ <strong>$40.00+</strong></p>
+                  <p>Fill In (1 Color) __________________________ <strong>$35.00+</strong></p>
+                </div>
+              </div>
+        
+              <!-- Dip Powder -->
+              <div class="accordion-item">
+                <button class="accordion-header">Dip Powder <span class="arrow">&#9662;</span></button>
+                <div class="accordion-body">
+                  <p>Ombre Dip _____________________________ <strong>$55.00+</strong></p>
+                  <p>Dip w/ 1 Color __________________________ <strong>$45.00+</strong></p>
+                  <p>Add Nail Tip _____________________________ <strong>$5.00+</strong></p>
+                </div>
+              </div>
+        
+              <!-- Spa Pedicure -->
+              <div class="accordion-item">
+                <button class="accordion-header">Spa Pedicure <span class="arrow">&#9662;</span></button>
+                <div class="accordion-body">
+                  <p>Royal Sauna Pedi (Reg) __________________ <strong>$85.00+</strong></p>
+                  <p>Royal Sauna Pedi with Gel _______________ <strong>$100.00+</strong></p>
+                  <p>Basic Pedi (Reg) ________________________ <strong>$35.00+</strong></p>
+                  <p>Basic Pedi with Gel ______________________ <strong>$50.00+</strong></p>
+                  <p>Deluxe Pedi (Reg) _______________________ <strong>$45.00+</strong></p>
+                  <p>Deluxe Pedi with Gel _____________________ <strong>$60.00+</strong></p>
+                  <p>Luxury Pedi Reg (Volcano) ________________ <strong>$55.00+</strong></p>
+                  <p>Luxury Pedi with Gel _____________________ <strong>$70.00+</strong></p>
+                  <p>Add Paraffin Wax ________________________ <strong>+$15.00</strong></p>
+                </div>
+              </div>
+        
+              <!-- Eyebrow -->
+              <div class="accordion-item">
+                <button class="accordion-header">Eyebrow Services <span class="arrow">&#9662;</span></button>
+                <div class="accordion-body">
+                  <p>Eyebrow Tint ______________________________ <strong>$25+</strong></p>
+                  <p>Microblading ________________________ <strong>Price Varies</strong></p>
+                </div>
+              </div>
+        
+              <!-- Eyelash -->
+              <div class="accordion-item">
+                <button class="accordion-header">Eyelash Services <span class="arrow">&#9662;</span></button>
+                <div class="accordion-body">
+                  <p>Strip __________________________________ <strong>$20.00+</strong></p>
+                  <p>Strip + Individual ________________________ <strong>$30.00+</strong></p>
+                  <p>Individual ______________________________ <strong>$30.00+</strong></p>
+                  <p>Individual Mink _________________________ <strong>$150.00+</strong></p>
+                </div>
+              </div>
+
+              <!-- Wax Services -->
+              <div class="accordion-item">
+                <button class="accordion-header">Wax Services <span class="arrow">&#9662;</span></button>
+                <div class="accordion-body">
+                  <p>Eyebrow _______________________________ <strong>$12.00+</strong></p>
+                  <p>Upper Lips _____________________________ <strong>$10.00+</strong></p>
+                  <p>Chin __________________________________ <strong>$15.00+</strong></p>
+                  <p>Whole Face ____________________________ <strong>$30.00+</strong></p>
+                  <p>Underarm ______________________________ <strong>$30.00+</strong></p>
+                  <p>Legs ______________________________ <strong>$50.00+/Half</strong></p>
+                  <p>Arms _________________________________ <strong>$40.00+</strong></p>
+                  <p>Bikini Wax _____________________________ <strong>$75.00+</strong></p>
+                  <p>Brazilian Wax __________________________ <strong>$100.00+</strong></p>
+                </div>
+              </div>
+
+              <!-- Kid's Menu -->
+              <div class="accordion-item">
+                <button class="accordion-header">Kids Menu <span class="arrow">&#9662;</span></button>
+                <div class="accordion-body">
+                  <p>Manicure (Regular Polish) _________________ <strong>$15.00+</strong></p>
+                  <p>Gel Polish Manicure ______________________ <strong>$30.00+</strong></p>
+                  <p>Gel Polish Hand _________________________ <strong>$20.00+</strong></p>
+                  <p>Pedicure _______________________________ <strong>$25.00+</strong></p>
+                </div>
+              </div>
+
+              <!-- Additional Services -->
+              <div class="accordion-item">
+                <button class="accordion-header">Additional Services <span class="arrow">&#9662;</span></button>
+                <div class="accordion-body">
+                  <p>Toe Nails Full Set w/ Gel __________________ <strong>$45.00+</strong></p>
+                  <p>Toe Nails Powder Full Set w/ Gel ___________ <strong>$50.00+</strong></p>
+                  <p>Polish Change Hand _____________________ <strong>$15.00+</strong></p>
+                  <p>Polish Change Feet ______________________ <strong>$15.00+</strong></p>
+                  <p>French Manicure Add On ___________________ <strong>$5.00+</strong></p>
+                  <p>Nail Design / Nail Repair / Gel Polish Removal __ <strong>$5.00+</strong></p>
+                  <p>Acrylic Remove w/o Services ______________ <strong>$10.00+</strong></p>
+                </div>
+              </div>
+
+            </div>
+          </div>  
+          <!-- Image Next to Services -->
+          <div class="services-image">
+            <img src="design04.jpg" alt="Purple Nails" />
+          </div>
+        </div>
+      </div>
+
+          <!-- Feature Section -->
+      <div class="feature-section">
+        <div class="feature">
+          <div class="feature-icon"><i class="fas fa-palette"></i></div>
+          <h3 class="feature-title">Endless Color Possibilities</h3>
+          <p>Choose from many colors and finishes, from simple neutrals to bold, seasonal favorites.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon"><i class="fas fa-hand-sparkles"></i></div>
+          <h3 class="feature-title">Tailored Nail Experiences</h3>
+          <p>Every guest is different, and so is every service. Whether you want a simple, elegant look or something bold and creative, we design it to match your style.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon"><i class="fas fa-spa"></i></div>
+          <h3 class="feature-title">Impeccable Ambience</h3>
+          <p>Step into peace and relaxation. Our salon combines modern style with comfort, giving you a welcoming space from the moment you arrive.</p>
+        </div>
+          <!-- 💅 New Feature Box for Color Variety -->
+        <div class="feature">
+          <div class="feature-icon"><i class="fas fa-shield-heart"></i></div>
+          <h3 class="feature-title">Proven Care, Trusted by Many</h3>
+          <p>With years of experience and many happy clients, we are known for clean, high-quality work and great attention to detail. At Expo Nails, your satisfaction is our standard.</p>
+        </div>
+      </div>
+
+
+      <!-- Static Image Gallery Section -->
+      <div class="image-gallery">
+        <h2 class="gallery-heading"></h2>
+        <div class="gallery-grid">
+          <a href="design01.jpg">
+            <img src="design01.jpg">
+          </a>
+          <a href="design02.jpg">
+            <img src="design02.jpg">
+          </a>
+          <a href="design03.jpg">
+            <img src="design03.jpg">
+          </a>
+          <a href="design04v2.jpg">
+            <img src="design04v2.jpg">
+          </a>
+          <a href="design05.jpg">
+            <img src="design05.jpg">
+          </a>
+          <a href="design06.jpg">
+            <img src="design06.jpg">
+          </a>
+          <a href="design07.jpg">
+            <img src="design07.jpg">
+          </a>
+          <a href="design08.jpg">
+            <img src="design08.jpg">
+          </a>
+          <a href="design13.jpg">
+            <img src="design13.jpg">
+          </a>
+          <a href="design10.jpg">
+            <img src="design10.jpg">
+          </a>
+          <a href="design11.jpg">
+            <img src="design11.jpg">
+          </a>
+          <a href="design12.jpg">
+            <img src="design12.jpg">
+          </a>
+        </div>    
+        
+        <div class="center-button">
+          <a href="gallery.html" class="btn">
+            <i class="fas fa-images"></i> View More
+          </a>
+        </div>
+          
+      </div>
+      
+      <!-- map -->
+      <div class="map-section">
+        <h2></h2>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6742.376110637115!2d-90.31397369999999!3d32.333660699999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86284abdbf2a63a1%3A0xb62b7182d91b7338!2sexpo%20nails%20and%20beauty!5e0!3m2!1sen!2sus!4v1742637644896!5m2!1sen!2sus" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+      
+      <!-- Social Links -->
+      <div id="contact" class="social-links">
+        <a href="https://www.instagram.com/exponailsnbeauty/" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="icon"> Instagram
+        </a>
+        <a href="https://www.facebook.com/ExpoNailsAndBeautyClinton/" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" class="icon"> Facebook
+        </a>
+      </div>
+    
+      <!-- Footer -->
+      <footer>
+        <p><i class="fas fa-map-marker-alt"></i> 212-B Clinton Blvd, Clinton, Mississippi 39056</p>
+        <p><i class="fas fa-phone-alt"></i> <a href="tel:6019241413" class="phone-link">(601) 924-1413</a></p>
+        <p><i class="fas fa-envelope"></i> exponails2019@gmail.com</p>
+        <p><i class="fas fa-clock"></i> Open Hours: Monday – Saturday, 9:00 AM – 7:00 PM</p>
+        <p><i class="fas fa-calendar-check"></i> <strong>Walk-ins welcome—no appointment needed!</strong></p>
+      </footer>
+      
+      <div>
+        <br><br>
+        <p class="endings">Expo Nails & Beauty © All Rights Reserved - 2025 - Designed by Hoan Tran <br><br>
+          <a href="website.html">Expo Nails & Beauty</a> <b>|</b>
+          <a href="website.html">Nails salon in Clinton, MS 39056</a> <b>|</b>
+          <a href="https://www.facebook.com/ExpoNailsAndBeautyClinton/">Blog</a>
+        </p>
+        <br>
+      </div>
+
+      <button onclick="scrollToTop()" id="scrollBtn" title="Go to top">
+        <i class="fas fa-chevron-up"></i>
+      </button>    
+      
+      <script>
+        const headers = document.querySelectorAll(".accordion-header");
+      
+        headers.forEach(header => {
+          header.addEventListener("click", () => {
+            const item = header.parentElement;
+            const body = item.querySelector(".accordion-body");
+            const isActive = item.classList.contains("active");
+      
+            // Close all
+            document.querySelectorAll(".accordion-item").forEach(i => {
+              i.classList.remove("active");
+              i.querySelector(".accordion-body").style.maxHeight = null;
+              i.querySelector(".accordion-body").style.paddingBottom = "0";
+            });
+      
+            // Open the one clicked
+            if (!isActive) {
+              item.classList.add("active");
+              body.style.maxHeight = body.scrollHeight + "px";
+              body.style.paddingBottom = "20px";
+            }
+          });
+        });
+      </script>
+      
+      <script>
+        // Show the button when scrolling down
+        window.onscroll = function () {
+          const scrollBtn = document.getElementById("scrollBtn");
+          if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+            scrollBtn.style.display = "block";
+          } else {
+            scrollBtn.style.display = "none";
+          }
+        };
+      
+        // Scroll to top smoothly
+        function scrollToTop() {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      </script>
+      <script>
+        // Select all the images inside the scroll track
+        const images = document.querySelectorAll('.scroll-track img');
+        const scrollTrack = document.querySelector('.scroll-track');
+
+        let isPaused = false; // Track the scroll state
+
+        // Function to pause scrolling
+        function pauseScroll() {
+          scrollTrack.style.animationPlayState = 'paused';
+          isPaused = true;
+        }
+
+        // Function to resume scrolling
+        function resumeScroll() {
+          scrollTrack.style.animationPlayState = 'running';
+          isPaused = false;
+        }
+
+        // Add click event to each image
+        images.forEach((img) => {
+          img.addEventListener('click', () => {
+            if (isPaused) {
+              resumeScroll(); // Resume if paused
+            } else {
+              pauseScroll(); // Pause if running
+            }
+          });
+        });
+      </script>
+
+      <script>
+        // ===== Infinite, swipe-smooth carousel =====
+        const carousel = document.querySelector(".fade-carousel");
+        const wrapper  = document.getElementById("slidesWrapper");
+        const dotsContainer = document.getElementById("carousel-dots");
+
+        // Build clones for seamless loop
+        let originalSlides = Array.from(wrapper.children); // .fade-slide imgs
+        const firstClone = originalSlides[0].cloneNode(true);
+        const lastClone  = originalSlides[originalSlides.length - 1].cloneNode(true);
+        firstClone.classList.add("clone");
+        lastClone.classList.add("clone");
+        wrapper.insertBefore(lastClone, originalSlides[0]);
+        wrapper.appendChild(firstClone);
+
+        // Now our working slide list includes clones
+        let slides = Array.from(wrapper.children);
+        let slideIndex = 1; // start on the first REAL slide
+        let autoSlideInterval, paused = false, isDragging = false, isTransitioning = false;
+        let swipeStartX = 0, swipeEndX = 0;
+
+        function cancelTransitionAndFreezePosition() {
+          // Read current translateX
+          const t = getComputedStyle(wrapper).transform;
+          let currentX = -slideIndex * carousel.clientWidth;
+          if (t && t !== "none") {
+            const m = new DOMMatrixReadOnly(t);
+            currentX = m.m41; // translateX in px
+          }
+
+          // Stop the animation right where it is and unlock
+          wrapper.style.transition = "none";
+          wrapper.style.transform  = `translate3d(${currentX}px, 0, 0)`;
+          isTransitioning = false;
+        }
+
+        // Dots for real slides only
+        dotsContainer.innerHTML = "";
+        const realCount = originalSlides.length;
+        for (let i = 0; i < realCount; i++) {
+          const dot = document.createElement("button");
+          dot.className = "dot";
+          dot.setAttribute("aria-label", `Go to slide ${i + 1}`);
+          dot.addEventListener("click", () => {
+            slideIndex = i + 1;              // offset by 1 due to leading clone
+            snapTo(slideIndex, true);
+            resetAutoSlide();
+          });
+          dotsContainer.appendChild(dot);
+        }
+
+        function updateDots() {
+          const dots = dotsContainer.querySelectorAll(".dot");
+          dots.forEach(d => d.classList.remove("active"));
+          const realPos = (slideIndex - 1 + realCount) % realCount; // 0..realCount-1
+          if (dots[realPos]) dots[realPos].classList.add("active");
+        }
+
+        // --- helpers ---
+        function bound(i) {
+          // keep index inside [0 .. slides.length-1]
+          return Math.max(0, Math.min(i, slides.length - 1));
+        }
+
+        function snapTo(index, animate) {
+          slideIndex = bound(index);
+          const w = carousel.clientWidth;
+          wrapper.style.transition = animate ? "transform 0.5s cubic-bezier(.22,.61,.36,1)" : "none";
+          wrapper.style.transform  = `translate3d(${-slideIndex * w}px, 0, 0)`;
+          if (animate) clearTransitionSoon();
+          updateDots();
+        }
+
+        function handleLoopOnEnd() {
+          // If not on a clone, nothing to do
+          if (!slides[slideIndex].classList.contains("clone")) return;
+
+          // Decide the real index we should be on
+          if (slideIndex === 0) {
+            slideIndex = realCount;          // last REAL slide
+          } else if (slideIndex === slides.length - 1) {
+            slideIndex = 1;                  // first REAL slide
+          }
+
+          // Jump instantly to the real slide with NO transition
+          wrapper.style.transition = "none";
+          wrapper.style.transform  = `translate3d(${-slideIndex * carousel.clientWidth}px, 0, 0)`;
+
+          // Re-enable the transition on the NEXT frame (prevents the visible flash)
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              wrapper.style.transition = "transform 0.5s cubic-bezier(.22,.61,.36,1)";
+            });
+          });
+        }
+
+        function moveSlide(n) {
+          if (isTransitioning) return;
+          clearInterval(autoSlideInterval);
+
+          // If we're sitting on a CLONE edge and the user tries to go farther OUT,
+          // silently warp to the corresponding REAL slide first (no animation).
+          if (slideIndex === slides.length - 1 && n > 0) { // lastClone -> first real
+            slideIndex = 1;
+            snapTo(slideIndex, false);
+          } else if (slideIndex === 0 && n < 0) {           // firstClone -> last real
+            slideIndex = realCount;
+            snapTo(slideIndex, false);
+          }
+
+          isTransitioning = true;
+          slideIndex = bound(slideIndex + n);
+          snapTo(slideIndex, true);
+          if (!paused) startAutoSlide();
+        }
+
+        function autoSlide() { moveSlide(1); }
+        function startAutoSlide() {
+          if (paused) return;
+          clearInterval(autoSlideInterval);
+          autoSlideInterval = setInterval(autoSlide, 5000);
+        }
+        function resetAutoSlide() { clearInterval(autoSlideInterval); startAutoSlide(); }
+
+        // Init position and dots
+        snapTo(slideIndex, false);
+        startAutoSlide();
+        updateDots();
+
+        // Hover pause (desktop)
+        carousel.addEventListener("mouseenter", () => { paused = true; clearInterval(autoSlideInterval); });
+        carousel.addEventListener("mouseleave", () => { paused = false; startAutoSlide(); });
+
+        // Disable browser drag ghost
+        wrapper.querySelectorAll('img').forEach(img => { img.draggable = false; });
+
+        // Drag preview in px
+        function setDragTransform(px) {
+          const basePx = -slideIndex * carousel.clientWidth;
+          wrapper.style.transition = "none";
+          wrapper.style.transform  = `translate3d(${basePx + px}px, 0, 0)`;
+        }
+
+        // Keep alignment on resize
+        window.addEventListener('resize', () => { snapTo(slideIndex, false); });
+
+        function handleSwipe(start, end) {
+          const diff = start - end;
+          const threshold = Math.max(50, carousel.clientWidth * 0.07); // ~7%
+          if (diff > threshold)      moveSlide(1);
+          else if (diff < -threshold) moveSlide(-1);
+          else                       snapTo(slideIndex, true); // snap back
+        }
+
+        // Touch
+        carousel.addEventListener("touchstart", (e) => {
+          cancelTransitionAndFreezePosition();              // <-- add this line
+          swipeStartX = e.touches[0].clientX;
+          swipeEndX   = swipeStartX;
+          isDragging  = true;
+          carousel.classList.add("dragging");
+          clearInterval(autoSlideInterval);
+        });
+        carousel.addEventListener("touchmove", (e) => {
+          if (!isDragging) return;
+          e.preventDefault();                   // <-- important
+          swipeEndX = e.touches[0].clientX;
+          setDragTransform(swipeEndX - swipeStartX);
+        }, { passive: false });                 // <-- important
+        carousel.addEventListener("touchend", (e) => {
+          isDragging = false;
+          carousel.classList.remove("dragging");
+          swipeEndX = e.changedTouches[0].clientX;
+          handleSwipe(swipeStartX, swipeEndX);
+          if (!paused) startAutoSlide();
+        });
+
+        // Mouse drag
+        carousel.addEventListener("mousedown", (e) => {
+          cancelTransitionAndFreezePosition();              // <-- add this line
+          isDragging = true;
+          swipeStartX = e.clientX;
+          swipeEndX   = swipeStartX;
+          carousel.classList.add("dragging");
+          carousel.style.userSelect = "none";
+          clearInterval(autoSlideInterval);
+        });
+        carousel.addEventListener("mousemove", (e) => {
+          if (!isDragging) return;
+          swipeEndX = e.clientX;
+          setDragTransform(swipeEndX - swipeStartX);
+        });
+        carousel.addEventListener("mouseup", () => {
+          if (!isDragging) return;
+          isDragging = false;
+          carousel.classList.remove("dragging");
+          carousel.style.userSelect = "";
+          handleSwipe(swipeStartX, swipeEndX);
+          if (!paused) startAutoSlide();
+        });
+        carousel.addEventListener("mouseleave", () => {
+          if (!isDragging) return;
+          isDragging = false;
+          carousel.classList.remove("dragging");
+          handleSwipe(swipeStartX, swipeEndX);
+          if (!paused) startAutoSlide();
+        });
+
+        // Arrow clicks
+        document.querySelector(".prev").addEventListener("click", () => moveSlide(-1));
+        document.querySelector(".next").addEventListener("click", () => moveSlide(1));
+
+      // Track transitions reliably
+      wrapper.addEventListener("transitionstart", (e) => {
+        if (e.propertyName === "transform") isTransitioning = true;
+      });
+
+      wrapper.addEventListener("transitionend", (e) => {
+        if (e.propertyName !== "transform") return;   // ignore others
+        isTransitioning = false;
+        handleLoopOnEnd();
+      });
+
+      // Fallback in case transitionend is swallowed (tab switch, reflow, etc.)
+      function clearTransitionSoon() {
+        setTimeout(() => { isTransitioning = false; }, 700); // > 500ms anim
+      }
+      </script>
+
+      <div id="lightbox" class="lightbox">
+        <button class="lightbox-prev">&#10094;</button>
+        <img class="lightbox-content" id="lightbox-img">
+        <button class="lightbox-next">&#10095;</button>
+        <span class="close">&times;</span>
+      </div>    
+    
+      <script>
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+        const closeBtn = document.querySelector(".lightbox .close");
+      
+        const galleryLinks = document.querySelectorAll(".gallery-grid a");
+        const imageUrls = Array.from(galleryLinks).map(link => link.href);
+        let currentIndex = 0;
+      
+        // Open lightbox
+        galleryLinks.forEach((anchor, index) => {
+          anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            currentIndex = index;
+            showLightboxImage(currentIndex);
+          });
+        });
+      
+        function showLightboxImage(index) {
+          lightbox.style.display = "block";
+          lightboxImg.src = imageUrls[index];
+
+          // Disable prev on first image
+          if (index === 0) {
+            prevBtn.classList.add("disabled");
+          } else {
+            prevBtn.classList.remove("disabled");
+          }
+
+          // Disable next on last image
+          if (index === imageUrls.length - 1) {
+            nextBtn.classList.add("disabled");
+          } else {
+            nextBtn.classList.remove("disabled");
+          }
+        }
+      
+        // Close on "X" click
+        closeBtn.onclick = () => lightbox.style.display = "none";
+      
+        // Close on outside click
+        window.onclick = function (e) {
+          if (e.target === lightbox) {
+            lightbox.style.display = "none";
+          }
+        };
+      
+        // Keyboard navigation
+        document.addEventListener("keydown", function (e) {
+          if (lightbox.style.display === "block") {
+            if (e.key === "ArrowRight" && currentIndex < imageUrls.length - 1) {
+              currentIndex++;
+              showLightboxImage(currentIndex);
+            } else if (e.key === "ArrowLeft" && currentIndex > 0) {
+              currentIndex--;
+              showLightboxImage(currentIndex);
+            } else if (e.key === "Escape") {
+              lightbox.style.display = "none";
+            }
+          }
+        });
+      
+        // Swipe gestures for mobile
+        let startX = 0;
+        lightbox.addEventListener("touchstart", e => {
+          startX = e.touches[0].clientX;
+        });
+      
+        lightbox.addEventListener("touchend", e => {
+          const endX = e.changedTouches[0].clientX;
+          if (endX < startX - 50 && currentIndex < imageUrls.length - 1) {
+            currentIndex++;
+            showLightboxImage(currentIndex);
+          } else if (endX > startX + 50 && currentIndex > 0) {
+            currentIndex--;
+            showLightboxImage(currentIndex);
+          }
+        });
+      </script>    
+      <script>
+        const prevBtn = document.querySelector(".lightbox-prev");
+        const nextBtn = document.querySelector(".lightbox-next");
+
+        prevBtn.addEventListener("click", () => {
+          if (currentIndex > 0) {
+            currentIndex--;
+            showLightboxImage(currentIndex);
+          }
+        });
+
+        nextBtn.addEventListener("click", () => {
+          if (currentIndex < imageUrls.length - 1) {
+            currentIndex++;
+            showLightboxImage(currentIndex);
+          }
+        });
+      </script>
+
+      <script>
+        const observer = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target); // only animate once
+            }
+          });
+        }, { threshold: 0.1 });
+
+        // Observe all elements with .fade-in-on-scroll
+        document.querySelectorAll('.fade-in-on-scroll').forEach(el => {
+          observer.observe(el);
+        });
+      </script>
+
+      <a href="tel:6019241413" class="call-icon" title="Call Us">
+        <i class="fas fa-phone-alt"></i>
+      </a>
+      
+      <script>
+        function toggleMenu() {
+          if (window.innerWidth > 768) return; // don't toggle on desktop
+
+          const navbar = document.getElementById("navbar");
+          const headerInner = document.getElementById("headerInner");
+          const hamburger = document.querySelector(".hamburger"); // ← add this
+
+          navbar.classList.toggle("show");
+          headerInner.classList.toggle("expanded");
+          headerInner.classList.toggle("collapsed");
+          hamburger.classList.toggle("active"); // <-- add back
+
+          setTimeout(() => {
+            const headerHeight = document.querySelector('.header').offsetHeight;
+            document.body.style.setProperty('--header-height', `${headerHeight}px`);
+          }, 300);
+        }
+      
+        // Collapse on load
+        window.addEventListener("load", () => {
+          const headerInner = document.getElementById("headerInner");
+          headerInner.classList.add("collapsed");
+          const headerHeight = document.querySelector('.header').offsetHeight;
+          document.body.style.setProperty('--header-height', `${headerHeight}px`);
+        });
+      </script>    
+      
+      <script>
+        // Clear mobile menu state on desktop resize
+        window.addEventListener('resize', () => {
+          const navbar = document.getElementById('navbar');
+          const headerInner = document.getElementById('headerInner');
+          const hamburger = document.querySelector('.hamburger');
+      
+          if (window.innerWidth >= 769) {
+            navbar.classList.remove('show');
+            headerInner.classList.remove('expanded');
+            headerInner.classList.add('collapsed');
+            hamburger.classList.remove('active');
+          }
+        });
+      </script>
+
+      <script>
+        function alignSubHeading() {
+          const preA = document.getElementById('bio-preA');
+          const sub = document.querySelector('.bio-sub');
+          if (!preA || !sub) return;
+
+          // Only offset on wider screens
+          if (window.innerWidth > 768) {
+            const offset = preA.getBoundingClientRect().width;
+            // slight visual tweak so the W tucks nicely under the A
+            sub.style.marginLeft = (offset) + 'px';
+          } else {
+            sub.style.marginLeft = '0';
+          }
+        }
+
+        // Run on load and on resize (fonts can change width after load)
+        window.addEventListener('load', alignSubHeading);
+        window.addEventListener('resize', alignSubHeading);
+      </script>
+    </main>  
+</body>
+</html>

@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gallery | Expo Nails</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <link rel="icon" href="logooo.png">
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Shared button styles */
+.pagination button {
+  background: linear-gradient(135deg, #f3f0ff, #dcd6ff);
+  border: 1px solid #bbaeff;
+  padding: 10px 18px;
+  font-size: 16px;
+  color: #5c4aad;
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Hover effect for number buttons */
+.pagination button:not(.nav-btn):hover {
+  background: linear-gradient(135deg, #d5cdff, #a89dff);
+  color: white;
+  box-shadow: 0 5px 12px rgba(165, 132, 255, 0.3);
+}
+
+/* Active number button */
+.pagination button.active {
+  background: #a89dff;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(100, 100, 255, 0.3);
+}
+
+/* Prev/Next - only hover if they’re active */
+.pagination button.active-nav:hover {
+  background: linear-gradient(135deg, #d5cdff, #a89dff);
+  color: white;
+  box-shadow: 0 5px 12px rgba(165, 132, 255, 0.3);
+}
+
+/* Disabled buttons */
+.pagination button.disabled {
+  background-color: #f0f0f0;
+  color: #999;
+  border: 1px solid #ddd;
+  cursor: not-allowed;
+  box-shadow: none;
+  opacity: 0.6;
+}
+
+    .gallery-sorting {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .gallery-sorting select {
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      border-radius: 10px;
+      object-fit: cover;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.05);
+    }    
+    
+    .gallery-sorting label {
+      font-family: "Apple Chancery", cursive;
+      font-size: 20px;
+      color: goldenrod;
+      margin-right: 10px;
+    }
+
+    .gallery-sorting select {
+      padding: 10px 16px;
+      font-size: 16px;
+      border: 1px solid goldenrod;
+      border-radius: 5px;
+      background-color: #fffaf2;
+      color: #333;
+      font-family: "Segoe UI", sans-serif;
+      transition: all 0.3s ease;
+    }
+
+    .gallery-sorting select:hover,
+    .gallery-sorting select:focus {
+      border-color: rgb(150, 150, 255);
+      box-shadow: 0 0 5px rgba(150, 150, 255, 0.5);
+      outline: none;
+    }
+
+    .gallery-sorting {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 18px;
+    }
+
+    /* Enhanced Lightbox Arrows - Only for Desktop */
+    .lightbox-prev,
+    .lightbox-next {
+      position: absolute; 
+      top: 42.5%;
+      transform: translateY(-50%);
+      font-size: 28px;
+      color: white;
+      background: rgba(150, 150, 255, 0.4); /* soft lavender tint */
+      border: none;
+      padding: 14px;
+      cursor: pointer;
+      z-index: 3000;
+      border-radius: 50%;
+      backdrop-filter: blur(4px); /* glassy look */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      transition: all 0.3s ease;
+    }
+
+    /* Hover effect: golden glow */
+    .lightbox-prev:hover,
+    .lightbox-next:hover {
+      background: goldenrod;
+      box-shadow: 0 6px 15px rgba(218, 165, 32, 0.7);
+      transform: translateY(-50%) scale(1.05);
+    }
+
+    .lightbox-prev {
+      left: calc(23%);
+    }
+
+    .lightbox-next {
+      right: calc(23%);
+    }
+
+    /* Hide arrows on mobile */
+    @media screen and (max-width: 768px) {
+      .lightbox-prev,
+      .lightbox-next {
+        display: none;
+      }
+    }
+
+    .lightbox-prev.disabled,
+    .lightbox-next.disabled {
+      opacity: 0;
+      pointer-events: none;
+      cursor: default;
+    }
+
+.instagram-section {
+  max-width: 1200px;          /* was 1000px */
+  margin: 120px auto 70px auto;
+  padding: 32px;               /* was 20px */
+  background: #fdfbff;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(150, 130, 255, 0.12);
+  text-align: center;
+}
+
+.instagram-section h3 {
+  font-family: 'Pacifico', cursive;
+  font-size: 32px;             /* bigger title */
+  color: goldenrod;
+  margin-bottom: 22px;
+}
+
+.instagram-frame {
+  width: 100%;
+  height: 720px;               /* taller on desktop */
+  border: 0;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .instagram-section { max-width: 900px; padding: 28px; }
+  .instagram-frame { height: 600px; }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .instagram-section { max-width: 95%; padding: 20px; }
+  .instagram-section h3 { font-size: 26px; }
+  .instagram-frame { height: 480px; }
+}
+
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div id="headerInner" class="header-inner">
+      <a href="website.html" class="logo-title">
+        <h1 class="title">
+          <img src="logooo.png" alt="Expo Nails Logo" class="logo" />
+          <b>EXPO Nails & Beauty</b>
+        </h1>
+      </a>
+    
+      <button class="hamburger" aria-label="Toggle Navigation Menu" onclick="toggleMenu()">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>     
+    
+      <nav class="navbar" id="navbar">
+        <a href="website.html"><i class="fas fa-home"></i> Home</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="website.html#contact">Contact</a>
+        <a href="about.html">About Us</a>
+      </nav>
+    </div>      
+  </div>    
+
+  <div class="image-gallery">
+    <h2 class="gallery-heading"></h2>
+
+    <div id="galleryGrid" class="gallery-grid"></div>
+
+    <div class="pagination" id="pagination"></div>
+
+    <div class="instagram-section">
+      <h3>Latest on Instagram</h3>
+      <iframe 
+        class="instagram-frame"
+        src="https://www.instagram.com/exponailsnbeauty/embed"
+        width="100%"
+        height="500"
+        style="border:0; overflow:hidden; border-radius: 12px;"
+        scrolling="no"
+        allowtransparency="true"
+        allowfullscreen="true">
+      </iframe>
+    </div>
+    
+    <p style="margin-top: 15px;">
+      <a href="https://www.instagram.com/exponailsnbeauty/" target="_blank" style="color: goldenrod; font-weight: bold;">
+        → View more on Instagram
+      </a>
+    </p>    
+
+  </div>
+
+  <!-- Footer (copied from website.html) -->
+  <div class="social-links">
+    <a href="https://www.instagram.com/exponailsnbeauty/" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="icon"> Instagram
+    </a>
+    <a href="https://www.facebook.com/ExpoNailsAndBeautyClinton/" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" class="icon"> Facebook
+    </a>
+  </div>
+
+  <footer>
+    <p><i class="fas fa-map-marker-alt"></i> 212-B Clinton Blvd, Clinton, MS 39056</p>
+    <p><i class="fas fa-phone-alt"></i> <a href="tel:6019241413" class="phone-link">(601) 924-1413</a></p>
+    <p><i class="fas fa-envelope"></i> exponails2019@gmail.com</p>
+    <p><i class="fas fa-clock"></i> Open Hours: Mon–Sat, 9:00 AM – 7:00 PM</p>
+    <p><i class="fas fa-calendar-check"></i> <strong>Walk-ins Welcome – No Appointment Needed</strong></p>
+  </footer>
+
+  <div>
+    <br><br>
+    <p class="endings">Expo Nails & Beauty © All Rights Reserved - 2025 - Designed by Hoan Tran <br><br>
+      <a href="website.html">Expo Nails & Beauty</a> <b>|</b>
+      <a href="website.html">Nails salon in Clinton, MS 39056</a> <b>|</b>
+      <a href="https://www.facebook.com/ExpoNailsAndBeautyClinton/">Blog</a>
+    </p>
+    <br>
+  </div>
+
+  <script>
+    const allImages = [
+      "design01.jpg",
+      "design02.jpg",
+      "design03.jpg",
+      "design04.jpg",
+      "design05.jpg",
+      "design06.jpg",
+      "design07.jpg",
+      "design08.jpg",
+      "design13.jpg",
+      "design10.jpg",
+      "design11.jpg",
+      "design12.jpg",
+      "design09.jpg",
+      "design14.jpg",
+      "design15.jpg",
+      "design16.jpg",
+      "design17.jpg",
+      "design18.jpg",
+      "design19.jpg",
+      "design20.jpg",
+      "design21.jpg",
+      "design22.jpg",
+      "design23.jpg",
+      "design24.jpg",
+      "design25.jpg",
+      "design26.jpg",
+      "design27.jpg",
+      "design28.jpeg",
+      "design29.jpg",
+      "design30.jpg",
+      "design31.jpg",
+      "design32.jpg",
+      "design33.jpg",
+      "design34.jpg",
+      "design35.jpg",
+      "design36.jpg",
+      "design37.jpg",
+      "design38.jpg",
+      "design39.jpg",
+      "design40.jpg",
+      "design41.jpg",
+      "design42.jpg",
+      "design43.jpg",
+      "design44.jpg",
+      "design45.jpg",
+      "design46.jpg",
+      "design47.jpg",
+      "design48.jpg",
+      "Before01.jpg",
+      "After01.jpg",
+      "Before02.jpg",
+      "After02.jpg",
+      "Eyebrows01.jpg",
+      "Eyebrows02.jpg",
+      "Eyebrows03.jpg",
+    ];
+
+    let currentPage = 1;
+    const itemsPerPage = 16;
+
+    function displayImages(images) {
+      const grid = document.getElementById("galleryGrid");
+      const cleaned = images.filter(Boolean);          // use only real URLs
+      const start = (currentPage - 1) * itemsPerPage;
+      const end = start + itemsPerPage;
+      grid.innerHTML = "";
+
+      cleaned.slice(start, end).forEach(url => {
+        const a = document.createElement("a");
+        a.href = url;
+        a.innerHTML = `<img src="${url}" alt="">`;
+        grid.appendChild(a);
+      });
+
+      displayPagination(cleaned.length);
+    }
+
+    function displayPagination(totalItems) {
+    const pages = Math.ceil(totalItems / itemsPerPage);
+    const pagination = document.getElementById("pagination");
+    pagination.innerHTML = "";
+
+    // Previous Button
+    const prevBtn = document.createElement("button");
+    prevBtn.innerHTML = "&laquo;";
+    prevBtn.disabled = currentPage === 1;
+    prevBtn.classList.add("nav-btn", currentPage === 1 ? "disabled" : "active-nav");
+    prevBtn.onclick = () => {
+    if (currentPage > 1) {
+        currentPage--;
+        displayImages(allImages);
+        window.scrollTo({ top: 150, behavior: 'smooth' });
+    }
+    };
+    pagination.appendChild(prevBtn);
+
+    // Number Buttons
+    for (let i = 1; i <= pages; i++) {
+    const btn = document.createElement("button");
+    btn.textContent = i;
+    if (i === currentPage) btn.classList.add("active");
+    btn.onclick = () => {
+        currentPage = i;
+        displayImages(allImages);
+        window.scrollTo({ top: 150, behavior: 'smooth' });
+    };
+    pagination.appendChild(btn);
+    }
+
+    // Next Button
+    const nextBtn = document.createElement("button");
+    nextBtn.innerHTML = "&raquo;";
+    nextBtn.disabled = currentPage === pages;
+    nextBtn.classList.add("nav-btn", currentPage === pages ? "disabled" : "active-nav");
+    nextBtn.onclick = () => {
+    if (currentPage < pages) {
+        currentPage++;
+        displayImages(allImages);
+        window.scrollTo({ top: 150, behavior: 'smooth' });
+    }
+    };
+    pagination.appendChild(nextBtn);
+    }
+
+    displayImages(allImages);
+    
+  </script>
+
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+    <button class="lightbox-prev">&#10094;</button>
+    <button class="lightbox-next">&#10095;</button>
+  </div>
+
+  <script>
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const closeBtn = document.querySelector(".lightbox .close");
+    const prevBtn = document.querySelector(".lightbox-prev");
+    const nextBtn = document.querySelector(".lightbox-next");
+
+    // Master list of all images (no empties) so navigation spans every page
+    const allUrls = allImages.filter(Boolean);
+    let globalIndex = 0;
+
+    function updateLightboxControls() {
+      prevBtn.classList.toggle("disabled", globalIndex <= 0);
+      nextBtn.classList.toggle("disabled", globalIndex >= allUrls.length - 1);
+    }
+
+    // Open lightbox (event delegation works after re-render)
+    document.addEventListener("click", (e) => {
+      const anchor = e.target.closest(".gallery-grid a");
+      if (!anchor) return;
+      e.preventDefault();
+
+      const href = anchor.getAttribute("href"); // relative path like "design01.jpg"
+      const idx = allUrls.indexOf(href);
+      globalIndex = idx !== -1 ? idx : 0;
+
+      lightboxImg.src = allUrls[globalIndex];
+      lightbox.style.display = "block";
+      updateLightboxControls();
+    });
+
+    // Close
+    closeBtn.onclick = () => (lightbox.style.display = "none");
+    window.onclick = (e) => { if (e.target === lightbox) lightbox.style.display = "none"; };
+
+    // Prev / Next (continuous across pages)
+    prevBtn.onclick = () => {
+      if (globalIndex > 0) {
+        globalIndex--;
+        lightboxImg.src = allUrls[globalIndex];
+        updateLightboxControls();
+      }
+    };
+    nextBtn.onclick = () => {
+      if (globalIndex < allUrls.length - 1) {
+        globalIndex++;
+        lightboxImg.src = allUrls[globalIndex];
+        updateLightboxControls();
+      }
+    };
+
+    // Keyboard
+    document.addEventListener("keydown", (e) => {
+      if (lightbox.style.display !== "block") return;
+      if (e.key === "ArrowLeft") prevBtn.onclick();
+      else if (e.key === "ArrowRight") nextBtn.onclick();
+      else if (e.key === "Escape") lightbox.style.display = "none";
+    });
+
+    // Touch swipe
+    let startX = 0;
+    lightbox.addEventListener("touchstart", (e) => { startX = e.touches[0].clientX; });
+    lightbox.addEventListener("touchend", (e) => {
+      const diff = e.changedTouches[0].clientX - startX;
+      if (Math.abs(diff) > 50) {
+        if (diff > 0) prevBtn.onclick(); else nextBtn.onclick();
+      }
+    });
+  </script>
+
+  <script>
+    // Collapse on load
+    window.addEventListener("load", () => {
+      const headerInner = document.getElementById("headerInner");
+      headerInner.classList.add("collapsed");
+      const headerHeight = document.querySelector('.header').offsetHeight;
+      document.body.style.setProperty('--header-height', `${headerHeight}px`);
+    });
+  </script>    
+
+  <button onclick="scrollToTop()" id="scrollBtn" title="Go to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>    
+
+  <script>
+    // Show the button when scrolling down
+    window.onscroll = function () {
+      const scrollBtn = document.getElementById("scrollBtn");
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        scrollBtn.style.display = "block";
+      } else {
+        scrollBtn.style.display = "none";
+      }
+    };
+
+    // Scroll to top smoothly
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+
+<script>
+  // Collapse on load
+  window.addEventListener("load", () => {
+    const headerInner = document.getElementById("headerInner");
+    headerInner.classList.add("collapsed");
+    const headerHeight = document.querySelector('.header').offsetHeight;
+    document.body.style.setProperty('--header-height', `${headerHeight}px`);
+  });
+</script>    
+
+<script>
+  function toggleMenu() {
+    const navbar = document.getElementById("navbar");
+    const headerInner = document.getElementById("headerInner");
+    const hamburger = document.querySelector(".hamburger");
+
+    navbar.classList.toggle("show");
+    headerInner.classList.toggle("expanded");
+    headerInner.classList.toggle("collapsed");
+    hamburger.classList.toggle("active");
+  }
+
+  window.onload = () => {
+    const headerInner = document.getElementById("headerInner");
+    headerInner.classList.add("collapsed");
+  };
+</script>
+
+<script>
+  // Clear mobile menu state on desktop resize
+  window.addEventListener('resize', () => {
+    const navbar = document.getElementById('navbar');
+    const headerInner = document.getElementById('headerInner');
+    const hamburger = document.querySelector('.hamburger');
+
+    if (window.innerWidth >= 769) {
+      navbar.classList.remove('show');
+      headerInner.classList.remove('expanded');
+      headerInner.classList.add('collapsed');
+      hamburger.classList.remove('active');
+    }
+  });
+</script>
+
+<a href="tel:6019241413" class="call-icon" title="Call Us">
+  <i class="fas fa-phone-alt"></i>
+</a>
+
+</body>
+</html>
